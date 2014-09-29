@@ -1,0 +1,113 @@
+/* travel list */
+.travels {
+	width: 620px;
+	margin: 2em auto;
+}
+@media all and (max-width: 640px) {
+	.travels {
+		width: 300px;
+	}
+}
+
+.travels > .title {
+	text-align: center;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.travels a.travel {
+	display: block;
+	margin-top: 2em;
+	color: #111111;
+	text-align: center;
+}
+
+.travels .travel .title {
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
+
+.travels .travel .description {
+	margin-top: 0.2em;
+	font-size: 1.2em;
+	line-height: 1.2em;
+}
+
+.travels .travel .date {
+	margin-top: 0.2em;
+}
+
+/* article */
+.articles {
+	width: 620px;
+	margin: 2em auto;
+}
+@media all and (max-width: 640px) {
+	.articles {
+		width: 300px;
+	}
+}
+
+article { margin-bottom: 2em; }
+
+article .content,
+article .image,
+article .info { border: 1px solid #dddddd; }
+
+article .content,
+article .info {
+	margin: 0 5px;
+	padding: 1em;
+}
+
+article .image img {
+	display: block;
+	width: 100%;
+}
+
+article .content {
+	font-size: 1.2em;
+	border-bottom: none;
+}
+
+article .content img {
+	display: block;
+	margin: auto;
+	max-width: 100%;
+}
+
+.checkin .content .venue {
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.checkin .content .venue .js-geomicon {
+	margin-right: 0.4em;
+}
+
+article .image + .content { border-top: none; }
+
+article .info {
+	text-align: right;
+
+	border-top: none;
+	border-radius: 0 0 3px 3px;
+}
+
+article .info a {
+	color: #aaaaaa;
+	text-decoration: none;
+}
+
+
+.pagination {
+	margin-bottom: 2em;
+	text-align: center;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+.pagination a,
+.pagination .current {
+	margin: 0 0.15em;
+}

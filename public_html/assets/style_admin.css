@@ -1,0 +1,106 @@
+.admin {
+	width: 620px;
+	margin: 2em auto;
+}
+@media all and (max-width: 640px) {
+	.admin {
+		width: 300px;
+	}
+}
+
+.admin > .title {
+	text-align: center;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.admin .menu {
+	margin: 1em 0;
+	border: 1px solid #aaaaaa;
+	border-radius: 3px;
+}
+
+.admin .menu .item {
+	display: block;
+	padding: 1em;
+	font-size: 1.5em;
+	text-align: center;
+	color: #111111;
+	border-bottom: 1px solid #aaaaaa;
+}
+
+.admin .menu .item:last-child { border-bottom: none; }
+
+.admin-login .button { width: 100%; }
+
+.admin-index .item.note-menu { display: none; }
+.admin-index .note-menu a { color: #111111; }
+
+.admin-travel-list .menu a { color: #111111; }
+.admin-travel-list .menu .small { font-size: 0.8em; }
+.admin-travel-list .button { width: 100%; }
+
+.admin-travel-update .row-start-input,
+.admin-travel-update .row-end-input,
+.admin-travel-create .row-start-input,
+.admin-travel-create .row-end-input {
+	margin: 0 0 0 3%;
+	width: 97%;
+}
+.admin-travel-update .row-start-input .cell,
+.admin-travel-update .row-end-input .cell,
+.admin-travel-create .row-start-input .cell,
+.admin-travel-create .row-end-input .cell {
+	text-align: center;
+}
+.admin-travel-update .row-start-input input,
+.admin-travel-update .row-end-input input,
+.admin-travel-create .row-start-input input,
+.admin-travel-create .row-end-input input {
+	display: block;
+	width: 100%;
+	height: 1.6em;
+	text-align: center;
+	font-size: 1.5em;
+	line-height: 1.6em;
+	border-radius: 0;
+	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.admin form .button { width: 100%; }
+
+.admin-note-create .form textarea.input { height: 10em; }
+
+.admin-checkin-create .form textarea.input { height: 5em; }
+.admin-checkin-create .button.button-venue {
+	margin-left: 3%;
+	width: 97%;
+}
+
+.venue-search {
+	display: none;
+}
+
+.venue-search input,
+.venue-search select {
+	display: block;
+	width: 100%;
+	height: 1.6em;
+	font-size: 1.5em;
+	line-height: 1.6em;
+	border-radius: 0;
+	vertical-align: middle;
+
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.venue-search input {
+	height: 1.9em;
+	font-size: 1.6em;
+	line-height: 1.9em;
+}

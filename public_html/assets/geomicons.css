@@ -1,0 +1,19 @@
+.js-geomicon {
+	fill: #000000;
+}
+
+.geomicon-md {
+	width: 2em;
+	height: 2em;
+	margin: 0 0.5em;
+}
+
+.geomicon-sm {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.125em;
+}
+
+.fill-gray {
+	fill: #aaaaaa !important;
+}

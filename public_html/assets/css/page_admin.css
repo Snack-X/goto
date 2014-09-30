@@ -68,21 +68,6 @@
 	display: none;
 }
 
-.venue-search input,
-.venue-search select {
-	display: block;
-	width: 100%;
-	height: 1.6em;
-	font-size: 1.5em;
-	line-height: 1.6em;
-	border-radius: 0;
-	vertical-align: middle;
-
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
-
 .venue-search input {
 	height: 1.9em;
 	font-size: 1.6em;

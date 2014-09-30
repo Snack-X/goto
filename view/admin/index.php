@@ -13,10 +13,6 @@
 </div>
 </section>
 
-<script>
-document.querySelector(".item-note").onclick = function() {
-	document.querySelector(".note-menu").style.display = "block";
-}
-</script>
+<script> document.querySelector(".item-note").onclick = function() { document.querySelector(".note-menu").style.display = "block"; } </script>
 
 <?php $this->render("templates/footer"); ?>

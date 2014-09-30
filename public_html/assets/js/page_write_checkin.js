@@ -60,7 +60,6 @@ $(".button-venue2").click(function() {
 });
 
 $(".button-checkin").click(function() {
-	$(this).hasClass("disabled")
 	if($(this).hasClass("disabled")) return;
 
 	$(".form").submit();

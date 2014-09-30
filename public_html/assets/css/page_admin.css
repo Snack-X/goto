@@ -53,22 +53,6 @@
 .admin-travel-create .row-end-input .cell {
 	text-align: center;
 }
-.admin-travel-update .row-start-input input,
-.admin-travel-update .row-end-input input,
-.admin-travel-create .row-start-input input,
-.admin-travel-create .row-end-input input {
-	display: block;
-	width: 100%;
-	height: 1.6em;
-	text-align: center;
-	font-size: 1.5em;
-	line-height: 1.6em;
-	border-radius: 0;
-	vertical-align: middle;
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
 
 .admin form .button { width: 100%; }
 

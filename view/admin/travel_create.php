@@ -61,9 +61,12 @@
 		</div>
 	</div>
 	<div class="form-row">
-		<input class="button" type="submit" value="만들기">
+		<button class="button" type="submit">만들기</button>
 	</div>
 </form>
 </section>
+
+<script src="/assets/js/jquery-2.1.1.min.js"></script>
+<script src="/assets/js/page_travel_create.js"></script>
 
 <?php $this->render("templates/footer"); ?>

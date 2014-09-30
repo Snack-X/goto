@@ -42,19 +42,19 @@
 	</div>
 
 	<div class="row row-content">
-		<div class="cell cell-15"><label class="label" for="link">내용</label></div>
+		<div class="cell cell-15"><label class="label" for="content">내용</label></div>
 		<div class="cell cell-85"><textarea class="input" name="content" id="content"></textarea></div>
 	</div>
-	<div class="row row-description">
+	<div class="row row-image">
 		<div class="cell cell-15"><label class="label" for="description">이미지</label></div>
-		<div class="cell cell-85"><input class="input" type="file" name="image" accept="image/*"></div>
+		<div class="cell cell-85"><input class="input" type="file" name="image" accept="image/*" id="image"></div>
 	</div>
 
 	<button type="button" class="button button-checkin disabled">체크인</button>
 </form>
 </section>
 
-<script src="/assets/jquery-2.1.1.min.js"></script>
+<script src="/assets/js/jquery-2.1.1.min.js"></script>
 <script>
 function find_venue(keyword) {
 	$(".button-venue").addClass("disabled");

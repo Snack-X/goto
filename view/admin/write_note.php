@@ -18,12 +18,12 @@
 		</select></div>
 	</div>
 	<div class="row row-content">
-		<div class="cell cell-15"><label class="label" for="link">내용</label></div>
+		<div class="cell cell-15"><label class="label" for="content">내용</label></div>
 		<div class="cell cell-85"><textarea class="input" name="content" id="content"></textarea></div>
 	</div>
-	<div class="row row-description">
-		<div class="cell cell-15"><label class="label" for="description">이미지</label></div>
-		<div class="cell cell-85"><input class="input" type="file" name="image[]" accept="image/*" multiple></div>
+	<div class="row row-image">
+		<div class="cell cell-15"><label class="label" for="image">이미지</label></div>
+		<div class="cell cell-85"><input class="input" type="file" name="image[]" accept="image/*" multiple id="image"></div>
 	</div>
 
 	<input class="button" type="submit" value="작성">

@@ -13,7 +13,7 @@
 		<div class="cell cell-70"><input class="input" type="password" name="password" id="password"></div>
 	</div>
 
-	<input class="button" type="submit" value="로그인">
+	<button class="button" type="submit">로그인</button>
 </form>
 </section>
 

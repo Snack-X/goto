@@ -1,5 +1,5 @@
 <?php $this->render("templates/header_list"); ?>
-<link rel="stylesheet" href="/assets/style_error.css">
+<link rel="stylesheet" href="/assets/style_error.min.css">
 
 <div class="error-message">
 	<p>Goto can't load that page. It's not server problem. <strong>You</strong> are the problem.</p>

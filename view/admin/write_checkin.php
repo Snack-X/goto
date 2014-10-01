@@ -59,6 +59,6 @@
 var fsq_client_id = "<?php echo $this->config["foursquare"]["client_id"] ?>";
 var fsq_client_secret = "<?php echo $this->config["foursquare"]["client_secret"] ?>";
 </script>
-<script src="/assets/js/page_write_checkin.js"></script>
+<script src="/assets/js/page_write_checkin.min.js"></script>
 
 <?php $this->render("templates/footer"); ?>

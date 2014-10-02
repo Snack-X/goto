@@ -26,7 +26,7 @@
 		<div class="cell cell-85"><input class="input" type="file" name="image[]" accept="image/*" multiple id="image"></div>
 	</div>
 
-	<input class="button" type="submit" value="작성">
+	<button class="button" type="submit">작성</button>
 </form>
 </section>
 

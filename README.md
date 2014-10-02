@@ -1,18 +1,18 @@
 # goto
 
-Simple travel note
+Simple travel note.
 
-## apache
+Write notes with Markdown, check in to famous venues, share your check ins and notes to Twitter.
 
-At your apache config file,
+(Venues are retrieved from Foursquare, goto does not check in to Foursquare or Swarm.)
+
+# Web server setting
+
+## Apache
+
+At your Apache config file,
 
     DocumentRoot "/path/to/goto/public_html"
-
-and
-
-    <Directory "/path/to/goto/public_html">
-        ...
-    </Directory>
 
 ## nginx
 

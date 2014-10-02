@@ -31,9 +31,7 @@ a, a:hover, a:active, a:visited { color: #0074d9; text-decoration: none; }
 	height: 1.6em;
 	font-size: 1.5em;
 	line-height: 1.6em;
-	border: 1px solid #aaaaaa;
 	border-radius: 0;
-	vertical-align: middle;
 
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;

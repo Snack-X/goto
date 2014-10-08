@@ -1,5 +1,11 @@
-<?php $this->render("templates/header", array("title" => "goto:".$travel["name"])); ?>
-<link rel="stylesheet" href="/assets/css/page_public.min.css">
+<?php
+
+$this->render("templates/header", array(
+	"title" => "goto:".$travel["name"],
+	"head" => array_merge($head, array("css" => array("/assets/css/page_public.min.css")))
+));
+
+?>
 <header class="travel">
 <h1 class="title"><a href="/<?php echo $travel["link"]; ?>"><span class="goto">goto</span><span class="colon">:</span><span class="location"><?php echo $travel["name"] ?></span></a></h1>
 <h2 class="description"><?php echo $travel["description"] ?></h2>

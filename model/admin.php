@@ -118,10 +118,11 @@ class adminModel {
 		// content process
 		if($content_len >= $target_len) {
 			$content_cut = mb_substr($content, 0, $target_len, "UTF-8");
+			$content_cut = trim($content_cut);
 			$content_cut .= "...";
 		}
 		else {
-			$content_cut = $content;
+			$content_cut = trim($content);
 		}
 
 		$content_cut .= " ";
@@ -136,7 +137,7 @@ class adminModel {
 		}
 
 		// link
-		$link = $this->config["twitter"]["url_root"].$travel["data"]["link"]."/".$note["data"]["id"];
+		$link = $this->config["global"]["base_url"]."/".$travel["data"]["link"]."/".$note["data"]["id"];
 		$tweet .= $link;
 
 		// tweet

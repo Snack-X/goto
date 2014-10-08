@@ -7,6 +7,9 @@ $config = array(
 		"password" => "",
 		"database" => ""
 	),
+	"global" => array(
+		"base_url" => "" // leading protocol, no trailing slash
+	),
 	"admin" => array(
 		"id" => "",
 		"password" => "" // use public_html/hash.php
@@ -15,8 +18,7 @@ $config = array(
 		"consumer_key"    => "",
 		"consumer_secret" => "",
 		"access_token"    => "",
-		"access_secret"   => "",
-		"url_root"        => ""
+		"access_secret"   => ""
 	),
 	"foursquare" => array(
 		"client_id"     => "",

@@ -1,4 +1,19 @@
-<?php $this->render("templates/header_list"); ?>
+<?php
+
+$this->render("templates/header_list", array(
+	"css" => array("/assets/css/page_public.min.css"),
+	"head" => array(
+		"meta" => array(
+			"twitter:card" => "summary",
+			"twitter:site" => $this->config["global"]["base_url"],
+			"twitter:title" => "goto",
+			"twitter:description" => "Your Simple Travel Note",
+			"twitter:url" => $this->config["global"]["base_url"]
+		)
+	)
+));
+
+?>
 
 <section class="travels">
 <div class="title">My goto</div>

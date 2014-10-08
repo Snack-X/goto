@@ -30,5 +30,13 @@
 <meta name="msapplication-config" content="/assets/images/icon/browserconfig.xml">
 <meta name="application-name" content="goto">
 
+<?php if(isset($head) && isset($head["meta"])) { foreach($head["meta"] as $name => $content) { ?>
+<meta name="<?php echo $name; ?>" content="<?php echo $content ?>">
+<?php } } ?>
+
+<?php if(isset($head) && isset($head["css"])) { foreach($head["css"] as $href) { ?>
+<link rel="stylesheet" href="<?php echo $href ?>">
+<?php } } ?>
+
 </head>
 <body>

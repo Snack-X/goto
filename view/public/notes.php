@@ -1,4 +1,23 @@
-<?php $this->render("templates/header_travel", array("travel" => $travel)); ?>
+<?php
+
+$meta_title = "goto:".$travel["name"];
+$meta_description = $travel["description"]." / ".substr($travel["start"], 0, 10)." ~ ".substr($travel["end"], 0, 10);
+$meta_url = $this->config["global"]["base_url"]."/".$travel["link"];
+
+$meta = array(
+	"twitter:card" => "summary",
+	"twitter:site" => $this->config["global"]["base_url"],
+	"twitter:title" => $meta_title,
+	"twitter:description" => $meta_description,
+	"twitter:url" => $meta_url
+);
+
+$this->render("templates/header_travel", array(
+	"travel" => $travel,
+	"head" => array("meta" => array($meta))
+));
+
+?>
 
 <section class="articles">
 <?php

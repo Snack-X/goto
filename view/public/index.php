@@ -1,14 +1,22 @@
 <?php
 
+$meta_title = "goto";
+$meta_description = "Your Simple Travel Note";
+$meta_url = $this->config["global"]["base_url"];
+
 $this->render("templates/header_list", array(
 	"css" => array("/assets/css/page_public.min.css"),
 	"head" => array(
 		"meta" => array(
+			"description" => $meta_description,
 			"twitter:card" => "summary",
 			"twitter:site" => $this->config["global"]["base_url"],
-			"twitter:title" => "goto",
-			"twitter:description" => "Your Simple Travel Note",
-			"twitter:url" => $this->config["global"]["base_url"]
+			"twitter:title" => $meta_title,
+			"twitter:description" => $meta_description,
+			"twitter:url" => $meta_url,
+			"og:title" => $meta_title,
+			"og:description" => $meta_description,
+			"og:url" => $meta_url
 		)
 	)
 ));

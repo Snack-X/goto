@@ -5,11 +5,15 @@ $meta_description = $travel["description"]." / ".substr($travel["start"], 0, 10)
 $meta_url = $this->config["global"]["base_url"]."/".$travel["link"];
 
 $meta = array(
+	"description" => $meta_description,
 	"twitter:card" => "summary",
 	"twitter:site" => $this->config["global"]["base_url"],
 	"twitter:title" => $meta_title,
 	"twitter:description" => $meta_description,
-	"twitter:url" => $meta_url
+	"twitter:url" => $meta_url,
+	"og:title" => $meta_title,
+	"og:description" => $meta_description,
+	"og:url" => $meta_url
 );
 
 $this->render("templates/header_travel", array(

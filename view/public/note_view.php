@@ -33,11 +33,15 @@ else if($note["type"] === "note") {
 var_dump($data);
 
 $meta = array(
+	"description" => $meta_description,
 	"twitter:card" => "summary",
 	"twitter:site" => $this->config["global"]["base_url"],
 	"twitter:title" => $meta_title,
 	"twitter:description" => $meta_description,
-	"twitter:url" => $meta_url
+	"twitter:url" => $meta_url,
+	"og:title" => $meta_title,
+	"og:description" => $meta_description,
+	"og:url" => $meta_url
 );
 
 // meta image process start
@@ -46,6 +50,7 @@ if($data["image"] !== false) {
 	else $meta_image = $data["image"];
 
 	$meta["twitter:image"] = $meta_image;
+	$meta["og:image"] = $meta_image;
 }
 // meta image process done
 

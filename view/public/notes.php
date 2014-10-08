@@ -18,7 +18,7 @@ $meta = array(
 
 $this->render("templates/header_travel", array(
 	"travel" => $travel,
-	"head" => array("meta" => array($meta))
+	"head" => array("meta" => $meta)
 ));
 
 ?>

@@ -61,7 +61,7 @@
 		</div>
 	</div>
 	<div class="form-row">
-		<input class="button" type="submit" value="수정">
+		<button class="button" type="submit">수정</button>
 	</div>
 </form>
 </section>

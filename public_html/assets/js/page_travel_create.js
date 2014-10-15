@@ -28,6 +28,10 @@ $(".form").submit(function(e) {
 	if(v_end_m < 1 || v_end_m > 12) err_list.push("end_m");
 	if(v_end_d < 1 || v_end_d > get_last_day(v_end_y, v_end_m)) err_list.push("end_d");
 
+	if(err_list.length === 0) {
+		return true;
+	}
+
 	$(this).find("input, textarea, select").removeClass("error");
 	for(var i in err_list) {
 		$(this).find("[name='" + err_list[i] + "']").addClass("error");

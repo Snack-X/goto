@@ -1,17 +1,17 @@
-$(function() {
+$ = document.querySelectorAll.bind(document);
 
-$(".form").submit(function(e) {
+function validate() {
 	var err_list = [];
 
-	var v_name        =  $(this).find("[name='name']").val();
-	var v_link        =  $(this).find("[name='link']").val();
-	var v_description =  $(this).find("[name='description']").val();
-	var v_start_y     = +$(this).find("[name='start_y']").val();
-	var v_start_m     = +$(this).find("[name='start_m']").val();
-	var v_start_d     = +$(this).find("[name='start_d']").val();
-	var v_end_y       = +$(this).find("[name='end_y']").val();
-	var v_end_m       = +$(this).find("[name='end_m']").val();
-	var v_end_d       = +$(this).find("[name='end_d']").val();
+	var v_name        =  $("[name='name']")[0].value;
+	var v_link        =  $("[name='link']")[0].value;
+	var v_description =  $("[name='description']")[0].value;
+	var v_start_y     = +$("[name='start_y']")[0].value;
+	var v_start_m     = +$("[name='start_m']")[0].value;
+	var v_start_d     = +$("[name='start_d']")[0].value;
+	var v_end_y       = +$("[name='end_y']")[0].value;
+	var v_end_m       = +$("[name='end_m']")[0].value;
+	var v_end_d       = +$("[name='end_d']")[0].value;
 
 	var get_last_day = function(y, m) {
 		return new Date(y, m, 0).getDate();
@@ -32,12 +32,16 @@ $(".form").submit(function(e) {
 		return true;
 	}
 
-	$(this).find("input, textarea, select").removeClass("error");
+	var list = $("input, textarea, select");
+	Array.prototype.slice.call(list).forEach(function(el) {
+		el.classList.remove("error");
+	});
+
 	for(var i in err_list) {
-		$(this).find("[name='" + err_list[i] + "']").addClass("error");
+		$("[name='" + err_list[i] + "']")[0].classList.add("error");
 	}
 
 	return false;
-});
+}
 
-});
+$(".form")[0].onsubmit = validate;

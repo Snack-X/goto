@@ -54,7 +54,6 @@
 </form>
 </section>
 
-<script src="/assets/js/jquery-2.1.1.min.js"></script>
 <script>
 var fsq_client_id = "<?php echo $this->config["foursquare"]["client_id"] ?>";
 var fsq_client_secret = "<?php echo $this->config["foursquare"]["client_secret"] ?>";

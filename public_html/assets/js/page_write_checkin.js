@@ -1,8 +1,8 @@
-$(function() {
+$ = document.querySelectorAll.bind(document);
 
 function find_venue(keyword) {
-	$(".button-venue").addClass("disabled");
-	$(".button-venue2").addClass("disabled");
+	$(".button-venue")[0].classList.add("disabled");
+	$(".button-venue2")[0].classList.add("disabled");
 
 	if(!navigator.geolocation) {
 		alert("이 브라우저에서는 체크인할 수 없습니다.");
@@ -19,16 +19,32 @@ function on_getposition(position, keyword) {
 	url += "&client_id=" + fsq_client_id;
 	url += "&client_secret=" + fsq_client_secret;
 
-	$.getJSON(url, on_getvenue);
+	var request = new XMLHttpRequest();
+	request.open("GET", url, true);
+
+	request.onload = function() {
+		if (request.status >= 200 && request.status < 400){
+			data = JSON.parse(request.responseText);
+			on_getvenue(data);
+		} else {
+			alert("에러가 발생했습니다.");
+		}
+	};
+
+	request.onerror = function() {
+		alert("에러가 발생했습니다.");
+	};
+
+	request.send();
 }
 
 function on_getvenue(result) {
 	if(result.meta.code !== 200) {
-		alert("error");
+		alert("에러가 발생했습니다.");
 		return;
 	}
 
-	$(".frm-venue").html("");
+	$(".frm-venue")[0].innerHTML = "";
 
 	for(var i in result.response.venues) {
 		var v = result.response.venues[i];
@@ -36,33 +52,36 @@ function on_getvenue(result) {
 		var lat = v.location.lat;
 		var lng = v.location.lng;
 
-		$(".frm-venue").append("<option value='" + lat + "," + lng + "," + name + "'>" + name + "</option>");
-	}
-	$(".frm-venue option:first-child").attr("selected", "selected");
+		var option = document.createElement("option");
+		option.setAttribute("value", "" + lat + "," + lng + "," + name);
+		option.innerHTML = name;
 
-	$(".button-venue").removeClass("disabled");
-	$(".button-venue2").removeClass("disabled");
-	$(".button-checkin").removeClass("disabled");
+		$(".frm-venue")[0].appendChild(option);
+	}
+
+	$(".frm-venue option:first-child")[0].setAttribute("selected", "selected");
+
+	$(".button-venue")[0].classList.remove("disabled");
+	$(".button-venue2")[0].classList.remove("disabled");
+	$(".button-checkin")[0].classList.remove("disabled");
 }
 
-$(".button-venue").click(function() {
-	if($(this).hasClass("disabled")) return;
+$(".button-venue")[0].onclick = function() {
+	if(this.classList.contains("disabled")) return;
 
-	$(".venue-search").show();
+	$(".venue-search")[0].style.display = "block";
 	find_venue("");
-});
+};
 
-$(".button-venue2").click(function() {
-	if($(this).hasClass("disabled")) return;
+$(".button-venue2")[0].onclick = function() {
+	if(this.classList.contains("disabled")) return;
 
-	var keyword = $(".search").val();
+	var keyword = $(".search")[0].value;
 	find_venue(keyword);
-});
+};
 
-$(".button-checkin").click(function() {
-	if($(this).hasClass("disabled")) return;
+$(".button-checkin")[0].onclick = function() {
+	if(this.classList.contains("disabled")) return;
 
-	$(".form").submit();
-});
-
-});
+	$(".form")[0].submit();
+};

@@ -19,15 +19,11 @@
 <a class="button" href="/admin/travel/create">새로운 여행</a>
 </section>
 
-<script src="/assets/js/jquery-2.1.1.min.js"></script>
 <script>
-$(function() {
-$(".travel-delete").click(function() {
-	if(confirm("정말로 이 여행을 삭제하시겠습니까?")) {
-		location.href = $(this).data("href");
-	}
-});
-});
+document.querySelector(".travel-delete").onclick = function() {
+if(confirm("정말로 이 여행을 삭제하시겠습니까?"))
+location.href = this.getAttribute("data-href");
+};
 </script>
 
 <?php $this->render("templates/footer"); ?>

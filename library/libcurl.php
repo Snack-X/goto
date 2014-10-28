@@ -24,8 +24,10 @@ class CurlRequest {
 		$this->curl = curl_init();
 		curl_setopt($this->curl, CURLOPT_URL, $url);
 		curl_setopt($this->curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146");
-		curl_setopt($this->curl, CURLOPT_SSL_VERIFYPEER, false);
-		curl_setopt($this->curl, CURLOPT_SSLVERSION, 3);
+		curl_setopt($this->curl, CURLOPT_SSL_VERIFYHOST, 2);
+		curl_setopt($this->curl, CURLOPT_SSL_VERIFYPEER, true);
+		curl_setopt($this->curl, CURLOPT_CAINFO, __DIR__."/ca-bundle.crt");
+		curl_setopt($this->curl, CURLOPT_CAPATH, __DIR__);
 		curl_setopt($this->curl, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($this->curl, CURLOPT_FOLLOWLOCATION, true);
 		curl_setopt($this->curl, CURLOPT_HEADER, $this->return_header);
@@ -40,6 +42,7 @@ class CurlRequest {
 		}
 
 		$result = curl_exec($this->curl);
+
 		curl_close($this->curl);
 
 		$this->return_header = false;

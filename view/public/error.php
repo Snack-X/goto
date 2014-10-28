@@ -1,4 +1,4 @@
-<?php $this->render("templates/header_list"); ?>
+<?php $this->render("templates/header_list", array("head" => array())); ?>
 <link rel="stylesheet" href="/assets/style_error.min.css">
 
 <div class="error-message">

@@ -23,10 +23,11 @@ function on_getposition(position, keyword) {
 	request.open("GET", url, true);
 
 	request.onload = function() {
-		if (request.status >= 200 && request.status < 400){
+		if(request.status >= 200 && request.status < 400) {
 			data = JSON.parse(request.responseText);
 			on_getvenue(data);
-		} else {
+		}
+		else {
 			alert("에러가 발생했습니다.");
 		}
 	};

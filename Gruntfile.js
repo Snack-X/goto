@@ -4,7 +4,8 @@ module.exports = function(grunt) {
 			all: [
 				"Gruntfile.js",
 				"public_html/assets/js/page_travel_create.js",
-				"public_html/assets/js/page_write_checkin.js"
+				"public_html/assets/js/page_write_checkin.js",
+				"public_html/assets/js/page_admin_index.js"
 			]
 		},
 		uglify: {
@@ -12,6 +13,7 @@ module.exports = function(grunt) {
 				files: {
 					"public_html/assets/js/page_travel_create.min.js": ["public_html/assets/js/page_travel_create.js"],
 					"public_html/assets/js/page_write_checkin.min.js": ["public_html/assets/js/page_write_checkin.js"],
+					"public_html/assets/js/page_admin_index.min.js": ["public_html/assets/js/page_admin_index.js"]
 				}
 			}
 		},

@@ -13,6 +13,6 @@
 </div>
 </section>
 
-<script> document.querySelector(".item-note").onclick = function() { document.querySelector(".note-menu").style.display = "block"; } </script>
+<script src="/assets/js/page_admin_index.min.js"></script>
 
 <?php $this->render("templates/footer"); ?>

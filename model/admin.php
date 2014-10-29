@@ -30,6 +30,7 @@ class adminModel {
 		$destination = $path."/".$filename;
 
 		rename($_FILES[$name]["tmp_name"], $destination);
+		$this->fix_image_orientation($destination);
 
 		return "/".$destination;
 	}
@@ -55,10 +56,59 @@ class adminModel {
 			$destination = $path."/".$filename;
 
 			rename($_FILES[$name]["tmp_name"][$i], $destination);
+			$this->fix_image_orientation($destination);
 			array_push($files, "/".$destination);
 		}
 
 		return $files;
+	}
+
+	private function fix_image_orientation($path) {
+		if(!function_exists("exif_read_data")) return;
+		if(!function_exists("gd_info")) return;
+
+		$arr = explode(".", $path);
+		$extension = strtolower($arr[count($arr) - 1]);
+
+		switch($extension) {
+		case "jpg": case "jpeg":
+			$image = imagecreatefromjpeg($path);
+			break;
+		case "png":
+			$image = imagecreatefrompng($path);
+			break;
+		default:
+			return;
+		}
+
+		$exif = exif_read_data($path);
+
+		if(empty($exif["Orientation"])) return;
+
+		switch($exif["Orientation"]) {
+		case 3:
+			$image = imagerotate($image, 180, 0);
+			break;
+		case 6:
+			$image = imagerotate($image, -90, 0);
+			break;
+		case 8:
+			$image = imagerotate($image, 90, 0);
+			break;
+		}
+
+		switch($extension) {
+		case "jpg": case "jpeg":
+			imagejpeg($image, $path, 100);
+			break;
+		case "png":
+			imagepng($image, $path);
+			break;
+		default:
+			return;
+		}
+
+		imagedestroy($image);
 	}
 
 	public function after_create($travel, $note) {

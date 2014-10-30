@@ -30,8 +30,6 @@ else if($note["type"] === "note") {
 }
 // meta description process done
 
-var_dump($data);
-
 $meta = array(
 	"description" => $meta_description,
 	"twitter:card" => "summary",

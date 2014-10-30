@@ -4,7 +4,7 @@
 <?php if($image !== false) { ?>
 	<img src="<?php echo $image; ?>">
 <?php } else { ?>
-	<img src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo $venue[0]; ?>,<?php echo $venue[1]; ?>&zoom=13&size=638x360&maptype=roadmap&sensor=false&key=AIzaSyDEqk-KnA3kl1RJ4ZULrLb25F1GrMjokx8">
+	<img src="http://maps.googleapis.com/maps/api/staticmap?center=<?php echo $venue[0]; ?>,<?php echo $venue[1]; ?>&zoom=13&size=638x360&maptype=roadmap&sensor=false&key=<?php echo $this->config["google"]["key"] ?>">
 <?php } ?>
 </div>
 

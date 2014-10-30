@@ -112,6 +112,12 @@ class adminModel {
 	}
 
 	public function after_create($travel, $note) {
+		if($thic->config["twitter"]["enabled"] === true) {
+			$this->_twitter($travel, $note);
+		}
+	}
+
+	private function _twitter($travel, $note) {
 		$twitter = new Twitter(
 			$this->config["twitter"]["consumer_key"],
 			$this->config["twitter"]["consumer_secret"]

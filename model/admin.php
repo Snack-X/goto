@@ -112,7 +112,7 @@ class adminModel {
 	}
 
 	public function after_create($travel, $note) {
-		if($thic->config["twitter"]["enabled"] === true) {
+		if($this->config["twitter"]["enabled"] === true) {
 			$this->_twitter($travel, $note);
 		}
 	}
@@ -125,8 +125,13 @@ class adminModel {
 		$twitter->set_access_token($this->config["twitter"]["access_token"]);
 		$twitter->set_access_secret($this->config["twitter"]["access_secret"]);
 
-		/*
+		$tweet = $this->_twitter_message($travel, $note);
 
+		$twitter->update_tweet($tweet);
+	}
+
+	private function _twitter_message($travel, $note) {
+		/*
 		tweet message format
 		 |
 		 |--- checkin
@@ -141,7 +146,6 @@ class adminModel {
 		   |--- photo + content           = "[pic] content http://go.to/aaa/111"
 		   |--- content                   = "content http://go.to/aaa/111"
 		   `--- photo                     = "[pic] http://go.to/aaa/111"
-
 		*/
 
 		$data = unserialize($note["data"]["data"]);
@@ -196,7 +200,6 @@ class adminModel {
 		$link = $this->config["global"]["base_url"]."/".$travel["data"]["link"]."/".$note["data"]["id"];
 		$tweet .= $link;
 
-		// tweet
-		$twitter->update_tweet($tweet);
+		return $tweet;
 	}
 }

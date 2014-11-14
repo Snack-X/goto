@@ -27,6 +27,10 @@ $config = array(
 	),
 	"google" => array(
 		"key" => "" // required for google static map
+	),
+	"ga" => array(
+		"enabled" => true, // false if you don't need google analytics
+		"key"     => "UA-52405942-1"
 	)
 );
 

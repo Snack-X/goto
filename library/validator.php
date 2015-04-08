@@ -10,8 +10,8 @@ class Validator {
 
 		if(in_array($month, array(1, 3, 5, 7, 8, 10, 12)) && $day > 31) return false;
 		else if(in_array($month, array(4, 6, 9, 11)) && $day > 30) return false;
-		else if($is_leap && $day > 29) return false;
-		else if($day > 28) return false;
+		else if($is_leap && $month === 2 && $day > 29) return false;
+		else if($month === 2 && $day > 28) return false;
 
 		return true;
 	}

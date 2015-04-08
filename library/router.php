@@ -20,6 +20,14 @@ class Router {
 		self::$routes[$method][$pattern] = array($controller, $action);
 	}
 
+	public static function get($pattern, $controller, $action) {
+		self::on("get", $pattern, $controller, $action);
+	}
+
+	public static function post($pattern, $controller, $action) {
+		self::on("post", $pattern, $controller, $action);
+	}
+
 	public static function last($controller, $action) {
 		self::$last_route = array($controller, $action);
 	}

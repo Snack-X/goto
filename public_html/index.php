@@ -17,10 +17,10 @@ Router::post("/admin/write/checkin", "admin", "write_checkin_process");
 Router::get ("/admin/write/note",    "admin", "write_note");
 Router::post("/admin/write/note",    "admin", "write_note_process");
 
-Router::get ("/api/travel",               "api", "travel_list");
-Router::get ("/api/travel/([a-z0-9-_]+)", "api", "note_list");
-Router::post("/api/checkin",              "api", "write_checkin");
-Router::post("/api/note",                 "api", "write_note");
+Router::get ("/error",               "public", "error");
+Router::get ("/",                    "public", "travel_list");
+Router::get ("/([a-z0-9-_]+)",       "public", "note_list");
+Router::get ("/([a-z0-9-_]+)/(\d+)", "public", "note_view");
 
 Router::last("public", "error");
 
